@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://c7p63asioe2wu"]
+
+[ext_resource type="Texture2D" uid="uid://dl3c5t1k3u6r1" path="res://UI/Cez.png" id="1_d5inn"]
+[ext_resource type="Texture2D" uid="uid://d77r0jophgti" path="res://UI/Cnmal.png" id="2_xneek"]
+[ext_resource type="Texture2D" uid="uid://b5x8su16e4q3d" path="res://UI/Chard.png" id="3_imr3b"]
+[ext_resource type="Texture2D" uid="uid://obaupax201aw" path="res://UI/Ccus.png" id="4_0pv85"]
+[ext_resource type="Texture2D" uid="uid://cm6cecuq4y5pw" path="res://UI/T0.png" id="5_7uesc"]
+[ext_resource type="Texture2D" uid="uid://iktydufwumyx" path="res://UI/T1.png" id="6_nt84d"]
+[ext_resource type="Texture2D" uid="uid://tv1p6yu31y8f" path="res://UI/T2.png" id="7_mj5g2"]
+[ext_resource type="Texture2D" uid="uid://caysc43snpun3" path="res://UI/T3.png" id="8_cq60a"]
+[ext_resource type="Texture2D" uid="uid://77h8vgihv4n" path="res://UI/T4.png" id="9_fk5c7"]
+[ext_resource type="Texture2D" uid="uid://cvlr7l1lcg13d" path="res://UI/T5.png" id="10_sf7so"]
+[ext_resource type="Texture2D" uid="uid://cl71ykajy08yi" path="res://UI/T6.png" id="11_v66kq"]
+[ext_resource type="Texture2D" uid="uid://dcx57qjglfl06" path="res://UI/T7.png" id="12_duvel"]
+[ext_resource type="Texture2D" uid="uid://cbwo811jku82g" path="res://UI/T8.png" id="13_k05mw"]
+[ext_resource type="Texture2D" uid="uid://bbl27iop0m5x5" path="res://UI/T9.png" id="14_28s6k"]
+[ext_resource type="Texture2D" uid="uid://b55j4uhbg54jb" path="res://UI/Tcolon.png" id="15_l53xd"]
+[ext_resource type="Texture2D" uid="uid://byuvadmy2fcx" path="res://UI/X0.png" id="16_18ybh"]
+[ext_resource type="Texture2D" uid="uid://chxlqself5rpf" path="res://UI/X1.png" id="17_rbtyi"]
+[ext_resource type="Texture2D" uid="uid://4nv88tytbc31" path="res://UI/X2.png" id="18_kt2s2"]
+[ext_resource type="Texture2D" uid="uid://bhnhli2tbv0cr" path="res://UI/Xinf.png" id="19_evg17"]
+
+[resource]
+animations = [{
+"frames": [ExtResource("1_d5inn"), ExtResource("2_xneek"), ExtResource("3_imr3b"), ExtResource("4_0pv85")],
+"loop": true,
+"name": &"difficulty",
+"speed": 0.0
+}, {
+"frames": [ExtResource("5_7uesc"), ExtResource("6_nt84d"), ExtResource("7_mj5g2"), ExtResource("8_cq60a"), ExtResource("9_fk5c7"), ExtResource("10_sf7so"), ExtResource("11_v66kq"), ExtResource("12_duvel"), ExtResource("13_k05mw"), ExtResource("14_28s6k"), ExtResource("15_l53xd")],
+"loop": true,
+"name": &"time",
+"speed": 0.0
+}, {
+"frames": [ExtResource("16_18ybh"), ExtResource("17_rbtyi"), ExtResource("18_kt2s2"), ExtResource("19_evg17")],
+"loop": true,
+"name": &"xray",
+"speed": 0.0
+}]

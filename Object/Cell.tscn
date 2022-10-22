@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://xxb47dtjni7l"]
+
+[ext_resource type="PackedScene" uid="uid://cidg6on0yxol5" path="res://Object/Cube.tscn" id="1"]
+[ext_resource type="Script" path="res://Object/Cell.cs" id="1_wg5wg"]
+[ext_resource type="PackedScene" uid="uid://c57xqvghhnvia" path="res://Object/Sphere.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bccssecub8408" path="res://Object/Block.tscn" id="3"]
+
+[node name="Cell" type="Node3D"]
+script = ExtResource("1_wg5wg")
+
+[node name="Block" parent="." instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+
+[node name="Cube" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+
+[node name="Sphere" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+
+[connection signal="OnLmbClick" from="Block" to="." method="OnSweep"]
+[connection signal="OnRmbClick" from="Block" to="." method="OnSign"]
+[connection signal="OnLmbClick" from="Cube" to="." method="OnSweep"]
+[connection signal="OnRmbClick" from="Cube" to="." method="OnSign"]
+[connection signal="OnLmbClick" from="Sphere" to="." method="OnNumberSweep"]

@@ -1,0 +1,12 @@
+D:\Documents\Minesweeper3D\.godot\mono\temp\bin\ExportDebug\win-x64\Minesweeper3D.deps.json
+D:\Documents\Minesweeper3D\.godot\mono\temp\bin\ExportDebug\win-x64\Minesweeper3D.dll
+D:\Documents\Minesweeper3D\.godot\mono\temp\bin\ExportDebug\win-x64\Minesweeper3D.pdb
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\Minesweeper3D.csproj.AssemblyReference.cache
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\Minesweeper3D.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\Minesweeper3D.AssemblyInfoInputs.cache
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\Minesweeper3D.AssemblyInfo.cs
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\Minesweeper3D.csproj.CoreCompileInputs.cache
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\Minesweeper3D.dll
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\refint\Minesweeper3D.dll
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\Minesweeper3D.pdb
+D:\Documents\Minesweeper3D\.godot\mono\temp\obj\ExportDebug\win-x64\ref\Minesweeper3D.dll

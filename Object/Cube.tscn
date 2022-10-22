@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://cidg6on0yxol5"]
+
+[ext_resource type="Script" path="res://Object/Cube.cs" id="1"]
+[ext_resource type="Material" uid="uid://csoxsdhpas4n2" path="res://Object/Material/CubeFlag.tres" id="2_kiibb"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_x688k"]
+albedo_color = Color(0.815686, 0.913725, 0.913725, 1)
+rim = 0.18
+rim_tint = 0.73
+clearcoat_enabled = true
+clearcoat = 0.5
+clearcoat_roughness = 1.0
+anisotropy = 0.06
+backlight = Color(0.384314, 1, 1, 1)
+grow_amount = 0.516
+
+[sub_resource type="BoxMesh" id="BoxMesh_gs0ac"]
+size = Vector3(0.31, 0.31, 0.31)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kc2r3"]
+flip_faces = true
+size = Vector3(0.35, 0.35, 0.35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4q344"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.0392157)
+emission_enabled = true
+emission = Color(0.52, 0.968, 1, 1)
+
+[sub_resource type="Animation" id="Animation_xhhqe"]
+resource_name = "Appear"
+length = 0.3
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.3, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_gt2sb"]
+resource_name = "Disappear"
+length = 0.3
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.3, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_adjds"]
+_data = {
+"Appear": SubResource("Animation_xhhqe"),
+"Disappear": SubResource("Animation_gt2sb")
+}
+
+[node name="Cube" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("1")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Body" type="MeshInstance3D" parent="Model"]
+mesh = SubResource("2")
+surface_material_override/0 = SubResource("ORMMaterial3D_x688k")
+
+[node name="Screen" type="MeshInstance3D" parent="Model"]
+mesh = SubResource("BoxMesh_gs0ac")
+skeleton = NodePath("../Body")
+surface_material_override/0 = ExtResource("2_kiibb")
+
+[node name="Chosen" type="Node3D" parent="Model"]
+visible = false
+
+[node name="Glow" type="MeshInstance3D" parent="Model/Chosen"]
+mesh = SubResource("BoxMesh_kc2r3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4q344")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_adjds")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnEnableSwitchFinished"]

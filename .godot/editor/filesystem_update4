@@ -1,0 +1,15 @@
+res://Game.tscn
+res://default_env.tres
+res://UI/UI.tres
+res://Object/Material/CubeFlag.tres
+res://Object/Material/Sphere.tres
+res://Object/Material/BlockLight.tres
+res://Object/Cell.tscn
+res://Object/Sphere.tscn
+res://Object/Cube.tscn
+res://Character/Player.tscn
+res://WorldBox.tscn
+res://Object/Block.tscn
+res://UI/gui.tscn
+res://UI/Menu.tscn
+res://UI/SliderWithBox.tscn

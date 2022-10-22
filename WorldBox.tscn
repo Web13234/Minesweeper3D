@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://dywg263t6ivfb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rxtqe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0t5qr"]
+transparency = 1
+albedo_color = Color(0, 0.996078, 0.862745, 0.0117647)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dbxug"]
+flip_faces = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g3tpt"]
+plane = Plane(0, -1, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qiqnn"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fu8lm"]
+plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_wyvsv"]
+plane = Plane(-1, 0, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nvy3r"]
+plane = Plane(0, 0, -1, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bur8l"]
+plane = Plane(0, 0, 1, 0)
+
+[node name="WorldBox" type="StaticBody3D"]
+collision_mask = 0
+
+[node name="BoxOutside" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+mesh = SubResource("BoxMesh_rxtqe")
+surface_material_override/0 = SubResource("StandardMaterial3D_0t5qr")
+
+[node name="BoxInside" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+mesh = SubResource("BoxMesh_dbxug")
+surface_material_override/0 = SubResource("StandardMaterial3D_0t5qr")
+
+[node name="Up" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("WorldBoundaryShape3D_g3tpt")
+
+[node name="Down" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("WorldBoundaryShape3D_qiqnn")
+
+[node name="Left" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_fu8lm")
+
+[node name="Right" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_wyvsv")
+
+[node name="Front" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+shape = SubResource("WorldBoundaryShape3D_nvy3r")
+
+[node name="Back" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+shape = SubResource("WorldBoundaryShape3D_bur8l")

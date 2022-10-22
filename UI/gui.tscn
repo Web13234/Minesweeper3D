@@ -1,0 +1,220 @@
+[gd_scene load_steps=15 format=3 uid="uid://baqrbnv4v1e5y"]
+
+[ext_resource type="Script" path="res://UI/GUI.cs" id="1_bf5vc"]
+[ext_resource type="Texture2D" uid="uid://lvnvlcqjhdmm" path="res://UI/Mborder.png" id="1_wpvsn"]
+[ext_resource type="FontFile" uid="uid://b4o3s4ovloiug" path="res://Font/SourceHanSansHWSC-Regular.otf" id="2_pjcry"]
+[ext_resource type="Texture2D" uid="uid://dy6svx4a2kdh" path="res://UI/Help.png" id="3_74vud"]
+[ext_resource type="SpriteFrames" uid="uid://c7p63asioe2wu" path="res://UI/UI.tres" id="4_iwkn3"]
+[ext_resource type="Texture2D" uid="uid://w8d781q0wyti" path="res://UI/Ccolor.png" id="5_a2jmv"]
+[ext_resource type="Texture2D" uid="uid://qlmgwdx1m3gw" path="res://UI/CcolorL.png" id="6_abuq1"]
+[ext_resource type="Texture2D" uid="uid://d1n5jyd3hl1aw" path="res://UI/CcolorR.png" id="7_xsgn8"]
+[ext_resource type="Texture2D" uid="uid://dtqpnfppennh8" path="res://UI/Cborder.png" id="8_26hf0"]
+[ext_resource type="Texture2D" uid="uid://bek0e5f40ujd0" path="res://UI/Xborder.png" id="9_wr71d"]
+[ext_resource type="Texture2D" uid="uid://e23clujwx4ny" path="res://UI/cursor.png" id="11_fvva4"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_4i1b2"]
+size = Vector3(13, 18, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jot5p"]
+font = ExtResource("2_pjcry")
+font_size = 24
+font_color = Color(0.243137, 0.243137, 0.243137, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8c7qo"]
+font = ExtResource("2_pjcry")
+font_size = 48
+font_color = Color(0.6, 0.6, 0.6, 1)
+shadow_size = 2
+shadow_color = Color(0.235294, 0.235294, 0.235294, 0.8)
+shadow_offset = Vector2(0, 0)
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_bf5vc")
+
+[node name="LeftUp" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Map" type="Node2D" parent="LeftUp"]
+position = Vector2(35, 16)
+
+[node name="Map" type="TextureRect" parent="LeftUp/Map"]
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="PlayerSign" type="MeshInstance2D" parent="LeftUp/Map"]
+modulate = Color(1, 0.19, 0.19, 1)
+mesh = SubResource("PrismMesh_4i1b2")
+
+[node name="Mborder" type="Sprite2D" parent="LeftUp/Map"]
+position = Vector2(128, 145)
+texture = ExtResource("1_wpvsn")
+
+[node name="Position" type="Label" parent="LeftUp/Map"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 80.5
+offset_top = 259.0
+offset_right = 176.5
+offset_bottom = 298.0
+grow_horizontal = 2
+text = "XX YY ZZ"
+label_settings = SubResource("LabelSettings_jot5p")
+horizontal_alignment = 1
+
+[node name="LeftDown" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Bar" type="Node2D" parent="LeftDown"]
+position = Vector2(-14, -3)
+
+[node name="Help" type="Sprite2D" parent="LeftDown/Bar"]
+position = Vector2(195, -192)
+texture = ExtResource("3_74vud")
+
+[node name="Base" type="AnimatedSprite2D" parent="LeftDown/Bar"]
+position = Vector2(227, -8)
+frames = ExtResource("4_iwkn3")
+animation = &"difficulty"
+
+[node name="Counter" type="Label" parent="LeftDown/Bar"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -48.0
+offset_right = 146.0
+offset_bottom = 27.0
+grow_vertical = 2
+text = "1234"
+label_settings = SubResource("LabelSettings_8c7qo")
+
+[node name="RightUp" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="Time" type="Node2D" parent="RightUp"]
+position = Vector2(-245, 46)
+
+[node name="Ms2" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(260, -12)
+scale = Vector2(0.75, 0.75)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="Ms1" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(236, -12)
+scale = Vector2(0.75, 0.75)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="2" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(144, 0)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+frame = 10
+
+[node name="1" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(60, 0)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+frame = 10
+
+[node name="S2" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(204, 0)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="S1" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(168, 0)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="M2" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(120, 0)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="M1" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(84, 0)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="H2" type="AnimatedSprite2D" parent="RightUp/Time"]
+position = Vector2(36, 0)
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="H1" type="AnimatedSprite2D" parent="RightUp/Time"]
+frames = ExtResource("4_iwkn3")
+animation = &"time"
+
+[node name="RightDown" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Slot" type="Node2D" parent="RightDown"]
+position = Vector2(-150, 10)
+
+[node name="Color" type="Node2D" parent="RightDown/Slot"]
+
+[node name="M" type="Sprite2D" parent="RightDown/Slot/Color"]
+modulate = Color(1, 0.521569, 0.521569, 1)
+texture = ExtResource("5_a2jmv")
+
+[node name="L" type="Sprite2D" parent="RightDown/Slot/Color"]
+modulate = Color(0.521569, 1, 1, 1)
+texture = ExtResource("6_abuq1")
+
+[node name="R" type="Sprite2D" parent="RightDown/Slot/Color"]
+modulate = Color(1, 1, 0.521569, 1)
+texture = ExtResource("7_xsgn8")
+
+[node name="Cborder" type="Sprite2D" parent="RightDown/Slot"]
+texture = ExtResource("8_26hf0")
+
+[node name="Xborder" type="Sprite2D" parent="RightDown/Slot"]
+position = Vector2(0, -77)
+texture = ExtResource("9_wr71d")
+
+[node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="RightDown/Slot/Xborder"]
+position = Vector2(0, -9)
+frames = ExtResource("4_iwkn3")
+animation = &"xray"
+
+[node name="Cursor" type="Sprite2D" parent="."]
+z_index = 15
+texture = ExtResource("11_fvva4")

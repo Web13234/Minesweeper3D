@@ -1,0 +1,168 @@
+{
+	"connections": [
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "decompose",
+			"to_port": 0
+		},
+		{
+			"from": "decompose",
+			"from_port": 3,
+			"to": "blend",
+			"to_port": 1
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 7
+		},
+		{
+			"from": "gradient_2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 0
+		},
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 3
+		},
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "3116",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+				"Blender": "D:/Documents/Minesweeper3D/Object/screen"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": -120,
+				"y": -123
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "material"
+		},
+		{
+			"name": "decompose",
+			"node_position": {
+				"x": -607.400024,
+				"y": 8.100006
+			},
+			"parameters": {
+
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "decompose"
+		},
+		{
+			"name": "blend",
+			"node_position": {
+				"x": -346.400024,
+				"y": 60.099998
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 10
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "image",
+			"node_position": {
+				"x": -964.400024,
+				"y": -65.899994
+			},
+			"parameters": {
+				"image": "%MATERIAL_MAKER_PATH%/examples/mm_icon.png"
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "image"
+		},
+		{
+			"name": "gradient_2",
+			"node_position": {
+				"x": -1005.400024,
+				"y": -217.399994
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 3,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0.070257,
+							"r": 0
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 0.722043,
+							"r": 1
+						},
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0.855971,
+							"r": 0
+						}
+					],
+					"type": "Gradient"
+				},
+				"repeat": 10,
+				"rotate": 90
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "gradient"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed": 0,
+	"seed_locked": false,
+	"shortdesc": "",
+	"type": "graph"
+}

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "1f+V50SEy6HO7wLnpjpxg4YIdhYmUPaonLXVAUXbJc2KKS9nj5w5UYkpGHErYNc33aaJvxIWnlB+KfEVvQG7Rg==",
+  "success": true,
+  "projectFilePath": "D:\\Documents\\Minesweeper3D\\Minesweeper3D.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\godot.sourcegenerators\\4.0.0-beta.3\\godot.sourcegenerators.4.0.0-beta.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\godotsharp\\4.0.0-beta.3\\godotsharp.4.0.0-beta.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.10\\microsoft.netcore.app.runtime.win-x64.6.0.10.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.10.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.10\\microsoft.aspnetcore.app.runtime.win-x64.6.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

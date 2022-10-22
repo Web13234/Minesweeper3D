@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://chkkt47i5io2d"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_gcedk"]
+
+[node name="Main" type="Node"]
+process_mode = 3
+script = ExtResource("1_gcedk")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+offset_left = 79.0
+offset_top = 57.0
+offset_right = 119.0
+offset_bottom = 97.0

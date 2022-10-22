@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpgssle7dfxuq"]
+
+[ext_resource type="Script" path="res://UI/SliderWithBox.cs" id="1_e7ld6"]
+
+[node name="SliderWithBox" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e7ld6")
+Editable = true
+MaxValue = 100.0
+
+[node name="Slider" type="HSlider" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2i(270, 36)
+layout_mode = 2
+offset_right = 270.0
+offset_bottom = 36.0
+rounded = true
+tick_count = 4
+ticks_on_borders = true
+
+[node name="SpinBox" type="SpinBox" parent="."]
+custom_minimum_size = Vector2i(84, 0)
+layout_mode = 2
+offset_left = 274.0
+offset_right = 358.0
+offset_bottom = 40.0
+
+[connection signal="value_changed" from="Slider" to="." method="OnValueChanged"]
+[connection signal="value_changed" from="SpinBox" to="." method="OnValueChanged"]
